@@ -1,0 +1,40 @@
+{
+  "name": "agents-md-doctor",
+  "version": "0.1.0",
+  "description": "Generate and lint AGENTS.md and Codex review setup for AI agent-friendly OSS repositories.",
+  "license": "MIT",
+  "author": "ors",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ors-orth/agents-md-doctor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ors-orth/agents-md-doctor/issues"
+  },
+  "homepage": "https://github.com/ors-orth/agents-md-doctor#readme",
+  "bin": {
+    "agents-md-doctor": "bin/agents-md-doctor.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "README.ja.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "agents.md",
+    "codex",
+    "github-action",
+    "ai-agent",
+    "cli"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node bin/agents-md-doctor.js --help",
+    "lint": "node scripts/check-js.js",
+    "test": "node --test"
+  }
+}
