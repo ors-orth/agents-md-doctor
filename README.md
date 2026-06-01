@@ -90,7 +90,7 @@ Generated files:
 
 The generated workflow uses `openai/codex-action@v1`, runs on `pull_request`, checks out the merge ref with `persist-credentials: false`, and runs Codex in `read-only` sandbox mode.
 
-You need to add an `OPENAI_API_KEY` repository secret before the workflow can run. By default, the generated workflow skips fork PRs because GitHub does not expose repository secrets to untrusted fork workflows.
+You need to add an `OPENAI_API_KEY` repository secret before Codex review jobs can run. By default, the generated workflow skips fork PRs, Dependabot PRs, and repositories without that secret.
 
 ## Options
 

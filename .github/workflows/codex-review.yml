@@ -9,8 +9,25 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  check_secret:
+    runs-on: ubuntu-latest
+    outputs:
+      has_openai_api_key: ${{ steps.check.outputs.has_openai_api_key }}
+    steps:
+      - name: Check OpenAI API key secret
+        id: check
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ -n "$OPENAI_API_KEY" ]; then
+            echo "has_openai_api_key=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_openai_api_key=false" >> "$GITHUB_OUTPUT"
+          fi
+
   codex:
-    if: github.event.pull_request.draft == false && github.event.pull_request.head.repo.full_name == github.repository
+    needs: check_secret
+    if: github.event.pull_request.draft == false && github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]' && needs.check_secret.outputs.has_openai_api_key == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: read
