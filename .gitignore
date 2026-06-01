@@ -1,0 +1,45 @@
+# macOS
+.DS_Store
+
+# Editor and IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+
+# Dependencies and package manager caches
+node_modules/
+.npm/
+.pnpm-store/
+.yarn/
+
+# Build and coverage output
+dist/
+build/
+coverage/
+.next/
+.nuxt/
+.svelte-kit/
+
+# Python caches and virtual environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Temporary files
+tmp/
+temp/
+
