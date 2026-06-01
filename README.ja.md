@@ -90,7 +90,7 @@ npx agents-md-doctor codex-review-setup
 
 生成される workflow は `openai/codex-action@v1` を使い、`pull_request` で動きます。checkout は merge ref を使い、`persist-credentials: false`、Codex は `read-only` sandbox で実行します。
 
-workflow を動かすには、GitHub repository secret として `OPENAI_API_KEY` を設定してください。デフォルトでは fork PR をスキップします。GitHub は信頼できない fork workflow に repository secret を渡さないためです。
+Codex review job を動かすには、GitHub repository secret として `OPENAI_API_KEY` を設定してください。デフォルトでは fork PR、Dependabot PR、secret 未設定の repository では skip します。
 
 ## オプション
 
