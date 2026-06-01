@@ -1,0 +1,43 @@
+name: Bug report
+description: Report a reproducible problem in agents-md-doctor.
+title: "Bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem. Please include enough detail for maintainers to reproduce it.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What happened, and what did you expect instead?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      description: Include the command you ran and a minimal repository shape if possible.
+      placeholder: |
+        1. Run `npx agents-md-doctor lint`
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include Node.js version, OS, and agents-md-doctor version.
+      placeholder: |
+        - OS:
+        - Node.js:
+        - agents-md-doctor:
+    validations:
+      required: true
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Add logs, generated files, or other context if useful.
+
