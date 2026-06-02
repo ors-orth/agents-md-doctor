@@ -171,7 +171,7 @@ jobs:
     outputs:
       final_message: \${{ steps.run_codex.outputs.final-message }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           ref: refs/pull/\${{ github.event.pull_request.number }}/merge
           persist-credentials: false
@@ -207,7 +207,7 @@ jobs:
       pull-requests: write
     steps:
       - name: Post Codex feedback
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           github-token: \${{ github.token }}
           script: |
